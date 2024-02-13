@@ -9,6 +9,10 @@ Greetings, fellow programmer! Welcome to the CrackHead project, application that
 
 It's a Python-based application that uses the power of OpenAI's CLIP model to find the most relevant images based on your query. Whether you're looking for a specific object, person, or even a meme, our application has got you covered!
 
+## How to run
+just hit
+streamlit run app.py
+
 ## How does it work?
 
 It works on 1's and 0's. 

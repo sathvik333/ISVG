@@ -4,6 +4,7 @@ from crackHead import plot_images_by_side
 import tempfile
 import os
 from crackHead import get_top_N_images, plot_images_by_side, image_data_df
+from video_gen import generate_video
 
 st.set_page_config(
     layout="wide"
@@ -28,5 +29,14 @@ def main():
         else:
             st.warning("Developer is not dumb are you?")
 
+    vid_query = st.text_input("Enter your query for video generation:")
+    if st.button("Generate Video"):
+        if len(vid_query) > 0:
+            # Generate the video
+            video_path = generate_video(vid_query)
+            st.subheader("Generated Video:")
+            st.video(video_path)  # Display the video
+        else:
+            st.warning("Developer is not dumb are you?")
 if __name__ == "__main__":
     main()

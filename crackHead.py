@@ -119,7 +119,6 @@ def plot_images_by_side(top_images):
 def get_top_N_images(query, data=image_data_df, top_K=4, search_criterion="text"):
 
     """
-    Retrieve top_K (5 is default value) articles similar to the query
     """
     # Text to image Search
     if(search_criterion.lower() == "text"):
@@ -138,8 +137,6 @@ def get_top_N_images(query, data=image_data_df, top_K=4, search_criterion="text"
     data["cos_sim"] = data["cos_sim"].apply(lambda x: x[0][0])
     
     """
-    Sort Cosine Similarity Column in Descending Order 
-    Here we start at 1 to remove similarity with itself because it is always 1
     """
     most_similar_articles = data.sort_values(by='cos_sim', ascending=False)[1:top_K+1]
     
